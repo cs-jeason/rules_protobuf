@@ -43,9 +43,9 @@ def cpp_proto_compile(langs = [str(Label("//cpp"))], **kwargs):
 cc_proto_compile = cpp_proto_compile
 
 def cpp_proto_library(
-    copts = [],
     name,
     langs = [str(Label("//cpp"))],
+    copts = [],
     protos = [],
     imports = [],
     inputs = [],
