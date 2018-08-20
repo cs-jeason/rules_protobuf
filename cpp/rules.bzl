@@ -43,6 +43,7 @@ def cpp_proto_compile(langs = [str(Label("//cpp"))], **kwargs):
 cc_proto_compile = cpp_proto_compile
 
 def cpp_proto_library(
+    copts = [],
     name,
     langs = [str(Label("//cpp"))],
     protos = [],
@@ -96,6 +97,7 @@ def cpp_proto_library(
   native.cc_library(
     name = name,
     srcs = srcs + [name + ".pb"],
+    copts = copts,
     deps = depset(deps + proto_deps + compile_deps).to_list(),
     **kwargs)
 
